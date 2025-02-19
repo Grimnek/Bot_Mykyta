@@ -4,7 +4,7 @@ from fuzzywuzzy import fuzz
 from commands import *
 
 
-print(f"{config.NAME} онлайн...")
+print(f"{config.NAME} online...")
 
 
 def respond(voice: str):
@@ -13,7 +13,7 @@ def respond(voice: str):
         cmd = recognize_cmd(filter_cmd(voice))
 
         if cmd['cmd'] not in config.CMD_LIST.keys():
-            tts.tts_speak("Так?")
+            tts.tts_speak("Yes?")
         else:
             execute_cmd(cmd['cmd'])
 

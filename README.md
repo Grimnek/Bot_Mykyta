@@ -1,7 +1,7 @@
 # Bot_Mykyta
 
-Голосовий асистент Микита.
+Voice assistant Sophia.
 
-Для повноцінної роботи йому потрібна [модель](https://alphacephei.com/vosk/models/vosk-model-small-uk-v3-small.zip).
+For full functionality, it requires a (https://alphacephei.com/vosk/models).
 
-Коли ви завантажите модель, перейменуйте папку в model.
+After downloading the model, rename the folder to model.

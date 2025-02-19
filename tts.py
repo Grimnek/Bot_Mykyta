@@ -3,10 +3,10 @@ import sounddevice as sd
 from silero import silero_tts
 import time
 
-language = 'ua'
-model_id = 'v3_ua'
+language = 'en'
+model_id = 'v3_en'
 sample_rate = 48000
-speaker = 'mykyta'
+speaker = 'en_0'
 put_accent = True
 put_yo = True
 device = torch.device('cpu')

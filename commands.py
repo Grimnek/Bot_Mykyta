@@ -20,74 +20,74 @@ def humansize(nbytes):
 
 def execute_cmd(cmd: str):
     if cmd == 'help':
-        tts.tts_speak("""відобразити час ...
-        відкривати браузер ...
-        відкривати ютуб ...
-        тестувати швидкість інтернету ...
-        тестувати характеристики пристрою ...""")
+        tts.tts_speak("""display time...
+        open browser...
+        open youtube ...
+        test internet speed...
+        test the characteristics of the device ...""")
 
     elif cmd == 'ctime':
-        print("Використано оперативної пам'яті програмою (МБ): ")
+        print("RAM used by the program (MB): ")
         a = memory_usage()
         print(round(a[0]))
         now = datetime.datetime.now()
-        print("Зараз: " + f"{now.hour}:" + f"{now.minute}")
+        print("Now: " + f"{now.hour}:" + f"{now.minute}")
 
     elif cmd == 'browser':
-        print("Використано оперативної пам'яті програмою (МБ): ")
+        print("RAM used by the program (MB): ")
         a = memory_usage()
         print(round(a[0]))
         webbrowser.open("https://google.com")
-        tts.tts_speak("Браузер був відкритий на ваш запит.")
+        tts.tts_speak("The browser was opened at your request.")
 
     elif cmd == 'youtube':
-        print("Використано оперативної пам'яті програмою (МБ): ")
+        print("RAM used by the program (MB): ")
         a = memory_usage()
         print(round(a[0]))
         webbrowser.open("https://www.youtube.com")
-        tts.tts_speak("Ютуб був відкритий на ваш запит.")
+        tts.tts_speak("YouTube was opened at your request.")
 
     elif cmd == 'ping':
-        print("Використано оперативної пам'яті програмою (МБ): ")
+        print("RAM used by the program (MB): ")
         a = memory_usage()
         print(round(a[0]))
-        tts.tts_speak("Зачекайте, вимірюю швидкість вашої мережі. Це може зайняти певний час.")
+        tts.tts_speak("Wait, I'm measuring your network speed. This may take some time.")
         stest = speedtest.Speedtest()
         download = stest.download()
         upload = stest.upload()
 
-        print(f"Швидкість завантаження: {humansize(download)} \nШвикість вивантаження: {humansize(upload)}")
+        print(f"Download speed: {humansize(download)} \nSpeed of unloading: {humansize(upload)}")
         print("OK")
 
     elif cmd == 'sysinfo':
         m = platform.machine()
-        print("Тип машини: " + m)
+        print("Computer: " + m)
         ver = platform.version()
-        print("Версія: " + ver)
+        print("Version: " + ver)
         plt = platform.platform()
-        print("Платформа: " + plt)
+        print("Platform: " + plt)
         sys = platform.system()
-        print("Система: " + sys)
+        print("System: " + sys)
         pr = platform.processor()
-        print("Процесор: " + pr)
+        print("Processor: " + pr)
         arc = platform.architecture()
-        print("Архітектура: ")
+        print("Architecture: ")
         print(arc)
         pv = platform.python_version()
-        print("Версія Python: " + pv)
+        print("Version Python: " + pv)
         rel = platform.release()
-        print("Версія Windows: " + rel)
+        print("Version Windows: " + rel)
         psutil.cpu_percent()
         psutil.virtual_memory()
         dict(psutil.virtual_memory()._asdict())
         used_ram = psutil.virtual_memory().percent
         total, used, free = shutil.disk_usage("\\")
-        print("Загально %d гігабайт пам'яті.\n" % (total // (2 ** 30)) +
-              "Використано з них %d гігабайт.\n" % (used // (2 ** 30)) +
-              "Вільно: %d гігабайт.\n" % (free // (2 ** 30)) +
-              "Використано " + str(used_ram) + " відсотків оперативної пам'яті.")
-        tts.tts_speak("Ось ваша детальна інформація про систему.")
+        print("Total %d gigabytes of memory.\n" % (total // (2 ** 30)) +
+              "Used %d gigabytes.\n" % (used // (2 ** 30)) +
+              "Free: %d gigabytes.\n" % (free // (2 ** 30)) +
+              "Used  " + str(used_ram) + " percent of RAM.")
+        tts.tts_speak("Here is your detailed system information.")
 
     elif cmd == 'quit':
-        tts.tts_speak("Допобачення. Гарного вам дня!")
+        tts.tts_speak("Goodbye. Have a nice day!")
         exit(0)
