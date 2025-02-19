@@ -1,4 +1,4 @@
-# Bot_Mykyta
+# Bot_Sophia
 
 Voice assistant Sophia.
 
